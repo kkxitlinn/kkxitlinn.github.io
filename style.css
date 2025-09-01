@@ -1,0 +1,351 @@
+@font-face {
+  font-family: mainfont;
+  src: url(slkscrb.ttf);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  line-height: 1.6;
+  color: #0f172a; background: #ffcccc;
+  font-family: mainfont;
+}
+
+.wrap {
+  width: min(650px, 92%);
+  min-height: 700px;
+  padding: 1rem;
+  border: 8px solid #f7e6ff;   
+  display: flex;     
+  flex-direction: column;    
+  align-items: center;        
+  text-align: center;
+  gap: 12px;
+}
+
+/* CODE FOR BODY */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;       
+  min-height: 100vh;         
+  margin: 0; 
+  text-align: center;                
+}
+
+h1 {
+  margin-bottom: 1rem;
+
+}
+
+/* FOCUS TIMER AREA */
+.focusArea {
+  background-color: #ffe6ff;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100px;
+}
+
+/* Create a container for the buttons */
+.focusBtns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.timerDisplay {
+  font-size: 34px;       
+  font-weight: bold;
+  color: #0f172a;
+  margin: 10px 0;
+  text-align: center;
+  font-family: mainfont;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.focusTitle {
+  font-size: 24px;
+  margin-top: 0px;
+  margin-bottom: auto;
+}
+
+.btnStart {
+  background-color: lightgray;
+  font-family: mainfont;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: auto;
+}
+
+.btnStart:hover {
+  background-color: lightgray;
+  color: white
+}
+
+.btnStart:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.btnPause {
+  display: inline-block;
+  background-color: lightgray;
+  font-family: mainfont;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: 0;
+}
+
+.btnPause:hover {
+  background-color: lightgray;
+  color: white
+}
+
+.btnPause:active {
+  background-color: orange;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.btnEnd {
+  display: inline-block;
+  background-color: lightgray;
+  font-family: mainfont;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: 0;
+}
+
+.btnEnd:hover {
+  background-color: lightgray;
+  color: white
+}
+
+.btnEnd:active {
+  background-color: red;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.btnOptions {
+  background-color: lightgray;
+  font-family: mainfont;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: auto;
+}
+
+.btnOptions:hover {
+  background-color: rgb(230, 149, 238);
+  color: white
+}
+
+.btnOptions:active {
+  background-color: #7d448b;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* PET SECTION */
+.petArea {
+  background-color: #ffe6ff;
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  align-items: center;
+  
+}
+
+.petBtns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: auto;
+  align-items: center;
+}
+
+.petTitle {
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.heartsContainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 2px 0;
+}
+
+.heartImage {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* NEW HUNGER STYLING */
+.hungerContainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin: 2px 0 5px 0;
+}
+
+.hungerImage {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hungerImage:hover {
+  transform: scale(1.1);
+}
+
+.onyxImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;  
+  margin: auto; 
+  animation: bounce 2s ease-in-out infinite;
+  transition: transform 0.2s ease, filter 0.5s ease;        
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);    
+  }
+  50% {
+    transform: translateY(-8px);   
+  }
+}
+
+.btnFeed{
+  background-color: rgb(140, 213, 134);
+  font-family: mainfont;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  margin-top: auto;
+}
+
+.btnFeed:hover {
+  background-color: rgb(79, 149, 82);
+  color: white
+}
+
+.btnFeed:active {
+  background-color: rgb(79, 149, 82);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* TASK SECTION */
+.taskArea {
+  background-color: #ffe6ff;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.taskInput {
+  width: 80%;
+  border: 2px solid;
+  border-radius: 2px;
+  font-family: mainfont;
+  height: 35px;
+  font-size: 14px;
+}
+
+.tasksTitle {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.btnAdd {
+  background-color: #e6ffcc;
+  font-family: mainfont;
+  font-size: 14px;
+  padding: 8px 16px;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 9px #999;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+}
+
+.btnAdd:hover {
+  background-color: #ceff99;
+}
+
+.btnAdd:active {
+  background-color: #e6ffcc;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
