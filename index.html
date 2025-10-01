@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Siren's Flower Garden</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="images/smallcloud.png"/>
+</head>
+
+<body>
+  <div class="container" id="mainContainer">
+    <!-- Garden Scene (bottom screen) -->
+    <div class="garden-scene">
+      <div class="garden-content">
+        <h1 class="pagetitle">Welcome to the Siren's Flower Garden!</h1>
+        <h2 class="introMsg">Please press on your flower!</h2>
+
+        <!-- Centered 7x3 grid (21 flowers) -->
+        <section class="flowerArea">
+          <img src="images/maddysflower.PNG" class="flower" onclick="showFlower('maddy')">
+          <img src="images/annesflower.png" class="flower" onclick="showFlower('anne')">
+          <img src="images/brisflower.png" class="flower" onclick="showFlower('bris')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('christine')">
+          <img src="images/ellsflower.png" class="flower" onclick="showFlower('ell')">
+          <img src="images/erinsflower.png" class="flower" onclick="showFlower('erin')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('kellie')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('kelsie')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('klara')">
+          <img src="images/leesflower.png" class="flower" onclick="showFlower('lee')">
+          <img src="images/lydiasflower.png" class="flower" onclick="showFlower('lydia')">
+          <img src="images/sarahsflower.png" class="flower" onclick="showFlower('sarah-elizabeth')">
+          <img src="images/stephsflower.png" class="flower" onclick="showFlower('steph')">
+          <img src="images/sydneysflower.png" class="flower" onclick="showFlower('sydney')">
+          <img src="images/tashsflower.png" class="flower" onclick="showFlower('tash')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('taylor')">
+          <img src="images/pashysflower.png" class="flower" onclick="showFlower('pashy')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('shelb')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('michelle')">
+          <img src="placeholder.png" class="flower" onclick="showFlower('bessie')">
+          <img src="images/roseysflower.png" class="flower" onclick="showFlower('rosebud')">
+        </section>
+      </div>
+    </div>
+
+    <!-- Sky Scene (top screen) -->
+    <div class="sky-scene">
+      <!-- Moving clouds -->
+      <img src="images/smallcloud.png" alt="cloud" class="cloud small-cloud cloud1">
+      <img src="images/largecloud.png" alt="cloud" class="cloud large-cloud cloud2">
+      <img src="images/smallcloud.png" alt="cloud" class="cloud small-cloud cloud3">
+
+      <!-- Flower Information Display -->
+      <div class="flower-info" id="flowerInfo" style="display: none;">
+        <h2 id="flowerName"></h2>
+        <img id="flowerImage" src="" alt="flower detail">
+        <p id="flowerDescription"></p>
+
+        <!-- Back to garden arrow (now visually below the card) -->
+        <div class="back-arrow" onclick="backToGarden()">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="white">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

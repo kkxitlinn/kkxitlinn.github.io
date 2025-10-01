@@ -1,0 +1,207 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: mainfont;
+  overflow: hidden;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: mainfont;
+  src: url(slkscrb.ttf);
+}
+
+/* Tall container we slide vertically */
+.container {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  transition: transform 0.8s ease-in-out;
+  transform: translateY(-100vh); /* start at garden */
+}
+
+.container.sky-view {
+  transform: translateY(0);      /* slide up to sky */
+}
+
+/* Each scene fills one screen */
+.sky-scene,
+.garden-scene {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.sky-scene {
+  top: 0;
+  background-color: #87CEEB; /* fallback */
+  background-image: url('images/skybackground.png');
+}
+
+.garden-scene {
+  top: 100vh;
+  background-image: url('images/background.png');
+}
+
+/* -------------------------------
+   Garden content layout (no overlap)
+--------------------------------*/
+.garden-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;           /* space between title, intro, and grid */
+  text-align: center;
+}
+
+.pagetitle {
+  color: #2E8B57;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+}
+
+.introMsg {
+  color: #228B22;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+/* Centered 7×3 grid */
+.flowerArea {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-auto-rows: 100px;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.flower {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.flower:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+/* -------------------------------
+   Sky: clouds + info card
+--------------------------------*/
+.cloud {
+  position: absolute;
+  opacity: 0.7;
+  animation: float 20s infinite linear;
+}
+
+.small-cloud { width: 100px; height: 60px; }
+.large-cloud { width: 150px; height: 90px; }
+
+.cloud1 { top: 10%; animation-duration: 25s; }
+.cloud2 { top: 20%; animation-duration: 30s; }
+.cloud3 { top: 5%;  animation-duration: 35s; }
+
+@keyframes float {
+  0%   { transform: translateX(-200px); }
+  100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+.flower-info {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;                 
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 650px; width: 95%;    
+  min-height: 500px;               
+  border: 3px solid #FFD700;
+}
+
+.flower-info h2 {
+  color: #2E8B57;
+  font-size: 2.8rem;               
+  margin-bottom: 30px;
+}
+
+.flower-info #flowerDescription {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flower-info img {
+  display: none;
+}
+
+.flower-info p {
+  color: #333;
+  font-size: 1.4rem;           
+  line-height: 1.6;                
+  margin-bottom: 30px;            
+}
+
+/* Arrow sits outside the card, centered underneath */
+.back-arrow {
+  position: absolute;
+  bottom: -42px;               
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  cursor: pointer;
+  background: rgba(46, 139, 87, 0.95);
+  border-radius: 50%;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.back-arrow:hover {
+  background: rgba(46, 139, 87, 1);
+  transform: translateX(-50%) scale(1.08);
+}
+
+.back-arrow svg { stroke: white; stroke-width: 2; fill: none; }
+
+/* -------------------------------
+   Responsive
+--------------------------------*/
+@media (max-width: 1024px) {
+  .flowerArea {
+    grid-template-columns: repeat(6, 90px);
+    grid-auto-rows: 90px;
+    gap: 18px;
+  }
+  .flower { width: 72px; height: 72px; }
+}
+
+@media (max-width: 768px) {
+  .pagetitle { font-size: 1.8rem; }
+  .introMsg  { font-size: 1.2rem; }
+
+  .flowerArea {
+    grid-template-columns: repeat(5, 70px);
+    grid-auto-rows: 70px;
+    gap: 16px;
+  }
+  .flower { width: 60px; height: 60px; }
+
+  .flower-info { padding: 20px; max-width: 300px; }
+  .flower-info h2 { font-size: 1.5rem; }
+  .flower-info img { width: 150px; height: 150px; }
+  .flower-info p { font-size: 1rem; }
+}
+
+
